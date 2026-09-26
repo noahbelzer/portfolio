@@ -1,4 +1,4 @@
-# Portfolio | Noah Belzer
+# Noah Belzer | Portfolio
 
 ---
 
@@ -11,7 +11,8 @@ The following are papers I completed for the postgraduate course "Practical Intr
 
 [Request to View](https://docs.google.com/forms/d/e/1FAIpQLSdbuGH-L-Yr3PkZWuVhhFcg-feyPhWO-C0NZBhjf1yoO0CK9g/viewform?usp=publish-editor)
 
-Note: The papers are not publicly available due to university rules and plagiarism considerations. If you are a recruiter, academic, or professional, please click the "Request to View" link above to enter your email address, and I can share samples of my work with you.
+> 🔒 **Note on Access:** Institutional policies prevent these papers from being publicly hosted. However, I am glad to share my original work with recruiters and researchers. Please click the **"Request to View"** link above to submit your email, and I will reply ASAP.
+
 
 ---
 
@@ -31,16 +32,16 @@ The following are reports I completed for the combined undergraduate/graduate co
 
 [Request to View](https://docs.google.com/forms/d/e/1FAIpQLSdbuGH-L-Yr3PkZWuVhhFcg-feyPhWO-C0NZBhjf1yoO0CK9g/viewform?usp=publish-editor)
 
-Note: The papers are not publicly available due to university rules and plagiarism considerations. If you are a recruiter, academic, or professional, please click the "Request to View" link above to enter your email address, and I can share samples of my work with you.
+> 🔒 **Note on Access:** Institutional policies prevent these papers from being publicly hosted. However, I am glad to share my original work with recruiters and researchers. Please click the **"Request to View"** link above to submit your email, and I will reply ASAP.
 
 ---
 
 ## Copyright
 
-© (Hikaru) Noah Belzer. All rights reserved.
+© 2026 (Hikaru) Noah Belzer. All rights reserved.
 
 Every document in this repository was written by me, except where a work is explicitly co-authored and credited within the document itself. University assignments are labeled.
 
 **No license is granted.** Currently, these documents are made available for reading and evaluation only. No part of them may be reproduced, redistributed, republished, adapted, translated, or used as training data for machine learning systems without my prior written permission. Free-to-use files will be clearly labeled and separated from my academic work.
 
-If you are a student at either the University of Edinburgh or the University of Maryland, Baltimore County (UMBC) and are enrolled in the same course, I cannot share the course papers or reports with you. Reproducing any part of them as your own work can constitute plagiarism under the academic misconduct policies of the University of Edinburgh and/or University of Maryland, Baltimore County (UMBC).
+If you are a student at either the University of Edinburgh or UMBC, and are enrolled in the same course, I cannot share the course papers or reports with you. Reproducing any part of them as your own work can constitute plagiarism under the academic misconduct policies of the University of Edinburgh and/or University of Maryland, Baltimore County (UMBC).
