@@ -1,4 +1,4 @@
-# Noah Belzer | Portfolio
+# Academic Portfolio
 
 ---
 
@@ -12,7 +12,6 @@ The following are papers I completed for the postgraduate course "Practical Intr
 [Request to View](https://docs.google.com/forms/d/e/1FAIpQLSdbuGH-L-Yr3PkZWuVhhFcg-feyPhWO-C0NZBhjf1yoO0CK9g/viewform?usp=publish-editor)
 
 > 🔒 **Note on Access:** These documents cannot be publicly posted, but I am glad to discuss my original work with recruiters and researchers. Please click **"Request to View"** to submit your email, and I will reply ASAP.
-
 
 ---
 
@@ -38,7 +37,7 @@ The following are reports I completed for the combined undergraduate/graduate co
 
 ## Copyright
 
-© 2026 Hikaru Noah Belzer. All rights reserved.
+© 2026 Noah Belzer. All rights reserved.
 
 Every document in this repository was written by me, except where a work is explicitly co-authored and credited within the document itself. University assignments are labeled.
 
