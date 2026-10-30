@@ -6,7 +6,7 @@
 * Faculty Mentor — Dr. Bedřich Sousedík
 * Supported by a **$1,000 Undergraduate Research Award (URA)**. The accompanying poster was presented at UMBC's Undergraduate Research and Creative Achievement Day (URCAD) on April 16, 2025.
 
-[View the Report](university-of-maryland-baltimore-county/Numerical_Simulations_in_Financial_Mathematics_Applications_URCAD_Report.pdf) | [View the Poster](university-of-maryland-baltimore-county/Numerical_Simulations_in_Financial_Mathematics_Applications_URCAD_Poster.pdf) | [View on Professor's Website](https://userpages.umbc.edu/~sousedik/classes/slides/undergraduate/URCAD_Poster_Belzer_and_Sousedik_corrected.pdf)
+[View the Supplementary Report](university-of-maryland-baltimore-county/Numerical_Simulations_in_Financial_Mathematics_Applications_URCAD_Report.pdf) | [View the Poster](university-of-maryland-baltimore-county/Numerical_Simulations_in_Financial_Mathematics_Applications_URCAD_Poster.pdf) | [View on Professor's Website](https://userpages.umbc.edu/~sousedik/classes/slides/undergraduate/URCAD_Poster_Belzer_and_Sousedik_corrected.pdf)
 
 ### Parallel Computing Reports
 The following are reports I completed for the combined undergraduate/graduate course "Introduction to Parallel Computing" offered through the Department of Mathematics & Statistics. I utilized Message Passing Interface (MPI) for parallel computing in C on the [UMBC High Performance Computing Facility](https://hpcf.umbc.edu/).
@@ -16,7 +16,7 @@ The following are reports I completed for the combined undergraduate/graduate co
 
 [Request to View](https://docs.google.com/forms/d/e/1FAIpQLSdbuGH-L-Yr3PkZWuVhhFcg-feyPhWO-C0NZBhjf1yoO0CK9g/viewform?usp=publish-editor)
 
-> 🔒 **Note on Access:** These documents cannot be publicly posted due to university guidelines, but I am glad to discuss my original work with recruiters and researchers. Please click **"Request to View"** to submit your email, and I will reply ASAP.
+> 🔒 **Note on Access:** University guidelines prevent these documents from being publicly posted, but I am glad to discuss my original work with recruiters and researchers. Please click **"Request to View"** to submit your email, and I will reply ASAP.
 
 ---
 
@@ -29,7 +29,7 @@ The following are papers I completed for the postgraduate course "Practical Intr
 
 [Request to View](https://docs.google.com/forms/d/e/1FAIpQLSdbuGH-L-Yr3PkZWuVhhFcg-feyPhWO-C0NZBhjf1yoO0CK9g/viewform?usp=publish-editor)
 
-> 🔒 **Note on Access:** These documents cannot be publicly posted, but I am glad to discuss my original work with recruiters and researchers. Please click **"Request to View"** to submit your email, and I will reply ASAP.
+> 🔒 **Note on Access:** University guidelines prevent these documents from being publicly posted, but I am glad to discuss my original work with recruiters and researchers. Please click **"Request to View"** to submit your email, and I will reply ASAP.
 
 ---
 
