@@ -1,21 +1,6 @@
 # Academic Portfolio
 
----
-
-## University of Edinburgh — School of Informatics
-
-The following are papers I completed for the postgraduate course "Practical Introduction to High Performance Computing" offered through the EPCC (formerly the Edinburgh Parallel Computing Centre). I utilized Message Passing Interface (MPI) for parallel computing in C on [ARCHER2](https://www.epcc.ed.ac.uk/hpc-services/archer2), the UK's national supercomputer.
-
-* ***Parallel Applications on HPC Architectures*** **(2026)**
-* ***Parallel Performance and Scalability*** **(2026)**
-
-[Request to View](https://docs.google.com/forms/d/e/1FAIpQLSdbuGH-L-Yr3PkZWuVhhFcg-feyPhWO-C0NZBhjf1yoO0CK9g/viewform?usp=publish-editor)
-
-> 🔒 **Note on Access:** These documents cannot be publicly posted, but I am glad to discuss my original work with recruiters and researchers. Please click **"Request to View"** to submit your email, and I will reply ASAP.
-
----
-
-## University of Maryland, Baltimore County (UMBC) — Department of Mathematics & Statistics
+## University of Maryland, Baltimore County — Department of Mathematics & Statistics
 ### Senior Thesis
 #### ***Numerical Simulations in Financial Mathematics Applications*** (2025)
 * Faculty Mentor — Dr. Bedřich Sousedík
@@ -28,6 +13,19 @@ The following are reports I completed for the combined undergraduate/graduate co
 
 * ***Parallel Finite Difference Method for the Poisson Problem*** **(2024)**
 * ***Optimized Power Method*** **(2024)**
+
+[Request to View](https://docs.google.com/forms/d/e/1FAIpQLSdbuGH-L-Yr3PkZWuVhhFcg-feyPhWO-C0NZBhjf1yoO0CK9g/viewform?usp=publish-editor)
+
+> 🔒 **Note on Access:** These documents cannot be publicly posted due to university guidelines, but I am glad to discuss my original work with recruiters and researchers. Please click **"Request to View"** to submit your email, and I will reply ASAP.
+
+---
+
+## University of Edinburgh — School of Informatics
+
+The following are papers I completed for the postgraduate course "Practical Introduction to High Performance Computing" offered through the EPCC (formerly the Edinburgh Parallel Computing Centre). I utilized Message Passing Interface (MPI) for parallel computing in C on [ARCHER2](https://www.epcc.ed.ac.uk/hpc-services/archer2), the UK's national supercomputer.
+
+* ***Parallel Applications on HPC Architectures*** **(2026)**
+* ***Parallel Performance and Scalability*** **(2026)**
 
 [Request to View](https://docs.google.com/forms/d/e/1FAIpQLSdbuGH-L-Yr3PkZWuVhhFcg-feyPhWO-C0NZBhjf1yoO0CK9g/viewform?usp=publish-editor)
 
