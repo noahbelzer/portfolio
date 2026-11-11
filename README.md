@@ -6,7 +6,7 @@ The following are papers I completed for the postgraduate course "Practical Intr
 ### I. ***Parallel Performance and Scalability of a 2D CFD Solver on ARCHER2*** (2026)
 #### OVERVIEW:
 <ul>
-A performance study of an MPI-parallel computational fluid dynamics code, carried out on ARCHER2. The solver computes steady-state flow in a square cavity with an inlet and an outlet, solving Laplace's equation for the stream function by Jacobi iteration on a regular grid. The MPI version uses a 1D domain decomposition in *x*, with halo exchanges between neighboring ranks at each step. An optional viscous mode additionally solves for vorticity at a given Reynolds number.<br><br>
+A performance study of an MPI-parallel computational fluid dynamics code, carried out on ARCHER2. The solver computes steady-state flow in a square cavity with an inlet and an outlet, solving Laplace's equation for the stream function by Jacobi iteration on a regular grid. The MPI version uses a 1D domain decomposition with halo exchanges between neighboring ranks at each step. An optional viscous mode additionally solves for vorticity at a given Reynolds number.<br><br>
 
 Rather than optimizing the solver, the goal here was to characterize it by measuring how runtime, speedup and parallel efficiency respond to problem size, numerical workload, toolchain, and implementation language, and to design the measurements so that each variable could be isolated cleanly under a fixed compute budget.
 </ul>
@@ -32,7 +32,7 @@ C, Fortran, MPI · ARCHER2 (HPE Cray EX) · Cray CCE, GCC, AOCC · Slurm batch s
 
 #### RESULTS:
 <ul>
-Optimization flags account for a larger share of single-node performance than compiler choice: `-O1` through `-O3` cut runtime by roughly a factor of 4–7 over `-O0`, while the three compilers land within a few percent of each other at equivalent flags. The C and Fortran implementations perform comparably, with C holding a small edge in per-iteration time at higher rank counts. The scaling runs show clear benefit from parallelism at the larger grid sizes and diminishing returns at the smallest, where per-rank subdomains become too thin to amortise halo exchange.
+Optimization flags account for a larger share of single-node performance than compiler choice: `-O1` through `-O3` cut runtime by roughly a factor of 4–7 over `-O0`, while the three compilers land within a few percent of each other at equivalent flags. The C and Fortran implementations perform comparably, with C holding a small edge in per-iteration time at higher rank counts. The scaling runs show clear benefit from parallelism at the larger grid sizes and diminishing returns at the smallest.
 </ul>
 
 * [View pages 1 to 3](university-of-edinburgh/Preview_Parallel_Performance_and_Scalability.pdf)
@@ -56,7 +56,7 @@ A comparative analysis of two Top500 supercomputers and their suitability for it
 
 **Case study: FUN3D.** NASA Langley's CFD solver, where sparse linear solves can dominate wall-clock time. Since NASA's SLAT toolkit is not publicly released, performance is inferred from two published studies that did run on the target hardware: SpMV and iterative-kernel measurements on A64FX (Gurhem et al.), and PSCToolkit scaling to 8192 GPUs on Leonardo (D'Ambra et al.).<br>
 
-**Kernel-level analysis.** A CSR SpMV implementation from the TBSLA framework is examined line by line to ground the architectural argument; the indirect access `v[colidx[j]]` that makes the kernel memory-bound, the load imbalance that irregular row lengths create under OpenMP row-wise parallelism, and the limits of SVE gather intrinsics on non-contiguous data.
+**Kernel-level analysis.** A CSR SpMV implementation from the TBSLA framework is examined line by line to ground the architectural argument. The indirect access `v[colidx[j]]` that makes the kernel memory-bound, the load imbalance that irregular row lengths create under OpenMP row-wise parallelism, and the limits of SVE gather intrinsics on non-contiguous data.
 </ul>
 
 #### ARGUMENT:
