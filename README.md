@@ -1,14 +1,14 @@
 # Academic Portfolio
 
-## University of Edinburgh — School of Informatics
+## University of Edinburgh, School of Informatics
 The following are papers I completed for the postgraduate course "Practical Introduction to High Performance Computing" offered through the EPCC (formerly the Edinburgh Parallel Computing Centre). I utilized Message Passing Interface (MPI) for parallel computing in C on [ARCHER2](https://www.epcc.ed.ac.uk/hpc-services/archer2), the UK's national supercomputer.
 
 ### I. ***Parallel Performance and Scalability of a 2D CFD Solver on ARCHER2*** (2026)
 #### OVERVIEW:
 <ul>
-A performance study of an MPI-parallel computational fluid dynamics code, carried out on ARCHER2. The solver computes steady-state flow in a square cavity with an inlet and an outlet, solving Laplace's equation for the stream function by Jacobi iteration on a regular grid. The MPI version uses a 1D domain decomposition with halo exchanges between neighboring ranks at each step. An optional viscous mode additionally solves for vorticity at a given Reynolds number.<br><br>
+A performance study of an MPI-parallel computational fluid dynamics program, implemented on ARCHER2. The solver computes steady-state flow in a square cavity with an inlet and an outlet, solving Laplace's equation for the stream function by Jacobi iteration on a regular grid. The MPI version uses a 1D domain decomposition with halo exchanges between neighboring ranks at each step. An optional viscous mode additionally solves for vorticity at a given Reynolds number.<br><br>
 
-Rather than optimizing the solver, the goal here was to characterize it by measuring how runtime, speedup and parallel efficiency respond to problem size, numerical workload, toolchain, and implementation language, and to design the measurements so that each variable could be isolated cleanly under a fixed compute budget.
+The goal was to characterize the solver by measuring how runtime, speedup and parallel efficiency respond to problem size, numerical workload, toolchain, and implementation language, and to design the measurements so that each variable could be isolated under a fixed compute budget.
 </ul>
 
 #### EXPERIMENTS:
@@ -18,7 +18,7 @@ Rather than optimizing the solver, the goal here was to characterize it by measu
 
 **2. Effect of the vorticity solve.** The same grid sizes and rank counts re-run with Re = 2.5, isolating the cost of the additional per-cell computation and its effect on the compute-to-communication ratio.<br>
 
-**3. Compiler and optimization flags.** Cray CCE, GCC and AOCC compared across default, `-O0`, `-O1`, `-O2`, `-O3` and `-g` at two problem sizes, reported as both wall-clock time and cell update rate (cells/s) so results are comparable across grid sizes.<br>
+**3. Compiler and optimization flags.** Cray CCE, GCC and AOCC compared across default, `-O0`, `-O1`, `-O2`, `-O3` and `-g` at two problem sizes, reported as wall-clock time and cell update rate (cells/s). So, the results are comparable across grid sizes.<br>
 
 **4. C vs. Fortran.** The two implementations compared at matched iteration counts, compiler and flags, with per-iteration timings used to separate steady-state cost from startup overhead.<br>
 
@@ -42,13 +42,13 @@ Optimization flags account for a larger share of single-node performance than co
 ### II. ***Fugaku vs. Leonardo: Architecture Comparison for Sparse CFD Workloads*** (2026)
 #### OVERVIEW:
 <ul>
-A comparative analysis of two Top500 supercomputers and their suitability for iterative sparse linear solvers in computational fluid dynamics. This is an analysis and technical writing project rather than a benchmarking study. The method is to characterize both architectures in detail, then infer how a specific CFD application would behave on each by drawing on published sparse-solver results measured on that hardware.
+A comparative analysis of two Top500 supercomputers and their suitability for iterative sparse linear solvers in computational fluid dynamics (CFD). This is an analysis and technical writing project, and the method is to characterize both architectures in detail, and then infer how a specific CFD application would behave on each by analyzing published sparse-solver results measured on that hardware.
 </ul>
 
 #### SCOPE:
 <ul>
   
-**Architectural profiles.** Fugaku (Fujitsu A64FX, Armv8.2-A with 512-bit SVE, 48 cores and 32 GiB of HBM2 at ~1 TB/s per node, Tofu Interconnect D, three-tier LLIO/FEFS/archival storage) set against Leonardo (Booster partition: Intel Xeon Platinum 8358 with four NVIDIA A100s per node, 512 GiB DDR4, HDR InfiniBand in a Dragonfly+ topology, plus a CPU-only DCGP partition). The comparison covers the homogeneous CPU design against the heterogeneous accelerated one, including Leonardo's switch/cell topology and the distance matrix used for locality-aware job placement.<br>
+**Architectural profiles.** Fugaku (Fujitsu A64FX, Armv8.2-A with 512-bit SVE, 48 cores and 32 GiB of HBM2 at ~1 TB/s per node, Tofu Interconnect D, three-tier LLIO/FEFS/archival storage) compared to Leonardo (Booster partition: Intel Xeon Platinum 8358 with four NVIDIA A100s per node, 512 GiB DDR4, HDR InfiniBand in a Dragonfly+ topology, plus a CPU-only DCGP partition). The comparison covers the homogeneous CPU design against the heterogeneous accelerated one, including Leonardo's switch/cell topology and the distance matrix used for locality-aware job placement.<br>
 
 **Programming environments.** Compiler and library support on each system: Fujitsu MPI and RIKEN-MPICH, OpenMP, XcalableMP, FDPS and SSL II/EigenExa on Fugaku; Intel oneAPI, the NVIDIA HPC SDK, CUDA, OpenACC and cuBLAS/MKL on Leonardo, with attention to where source portability holds and where performance portability breaks down.<br>
 
@@ -56,12 +56,12 @@ A comparative analysis of two Top500 supercomputers and their suitability for it
 
 **Case study: FUN3D.** NASA Langley's CFD solver, where sparse linear solves can dominate wall-clock time. Since NASA's SLAT toolkit is not publicly released, performance is inferred from two published studies that did run on the target hardware: SpMV and iterative-kernel measurements on A64FX (Gurhem et al.), and PSCToolkit scaling to 8192 GPUs on Leonardo (D'Ambra et al.).<br>
 
-**Kernel-level analysis.** A CSR SpMV implementation from the TBSLA framework is examined line by line to ground the architectural argument. The indirect access `v[colidx[j]]` that makes the kernel memory-bound, the load imbalance that irregular row lengths create under OpenMP row-wise parallelism, and the limits of SVE gather intrinsics on non-contiguous data.
+**Kernel-level analysis.** A CSR SpMV implementation from the TBSLA framework is analyzed line by line to support the architectural argument. The indirect access `v[colidx[j]]` that makes the kernel memory-bound, the load imbalance that irregular row lengths create under OpenMP row-wise parallelism, and the limits of SVE gather intrinsics on non-contiguous data.
 </ul>
 
 #### ARGUMENT:
 <ul>
-Sparse solver performance in CFD is governed by data movement rather than floating-point throughput, which reframes the comparison between the two machines. Fugaku's HBM2 bandwidth suits bandwidth-bound kernels directly and at very large node counts, but scaling of full iterative sequences is constrained by global vector assembly and communication. Leonardo offers a higher ceiling through GPU bandwidth and parallelism, and demonstrably strong weak scaling, but realizing it requires GPU-targeted code, storage formats other than CSR to avoid non-coalesced access, and careful management of halo exchanges and reductions, with published strong-scaling efficiency falling to around 44% from 1 to 16 GPUs.
+Sparse solver performance in CFD is governed by data movement rather than floating-point throughput, which reframes the comparison between the two machines. Fugaku's HBM2 bandwidth suits bandwidth-bound kernels directly and at very large node counts, but scaling of full iterative sequences is constrained by global vector assembly and communication. Leonardo offers a higher ceiling through GPU bandwidth and parallelism, and strong weak scaling, but realizing it requires GPU-targeted code, storage formats other than CSR to avoid non-coalesced access, and careful management of halo exchanges and reductions, with published strong-scaling efficiency falling to around 44% from 1 to 16 GPUs.
 </ul>
 
 #### TOOLS:
@@ -75,7 +75,7 @@ LaTeX · literature review across vendor documentation, Top500, and peer-reviewe
 
 ---
 
-## University of Maryland, Baltimore County — Department of Mathematics & Statistics
+## University of Maryland, Baltimore County, Department of Mathematics & Statistics
 ### Senior Thesis: ***Numerical Simulations in Financial Mathematics Applications*** (2025)
 * Faculty Mentor: [Dr. Bedřich Sousedík](https://userpages.umbc.edu/~sousedik/)
 * Supported by a **$1,000 Undergraduate Research Award (URA)**. The accompanying poster was presented at UMBC's Undergraduate Research and Creative Achievement Day (URCAD) on April 16, 2025.
